@@ -2,7 +2,24 @@ _base_ = [
     'co_dino_5scale_r50_1x_coco.py'
 ]
 
-load_from = 'models/co_dino_5scale_swin_large_22e_o365.pth'
+# data_root = 'data/publaynet-tiny/'
+# dataset_type = 'COCODataset'
+# classes = ('text', 'title', 'list', 'table', 'figure')
+# data = dict(
+#     train=dict(
+#         ann_file=data_root + 'annotations/mini_publaynet_train.json', # FIXME
+#         img_prefix=data_root + 'train/', # FIXME
+#         classes=classes),
+#     val=dict(
+#         ann_file=data_root + 'annotations/mini_publaynet_val.json', # FIXME
+#         img_prefix=data_root + 'val/', # FIXME
+#         classes=classes),
+#     test=dict(
+#         ann_file=data_root + 'annotations/mini_publaynet_val.json', # FIXME
+#         img_prefix=data_root + 'val/', # FIXME
+#         classes=classes))
+
+load_from = 'checkpoints/co_dino/swin_detr/co_dino_5scale_swin_large_22e_o365.pth'
 pretrained = None
 # model settings
 model = dict(
