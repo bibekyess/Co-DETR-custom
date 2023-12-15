@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = 'data/publaynet-tiny/'
+data_root = 'data/publaynet-full/publaynet/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -29,21 +29,21 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    samples_per_gpu=2,
+    samples_per_gpu=16,
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/mini_publaynet_train.json', # FIXME
+        ann_file=data_root + 'annotations/train.json', # FIXME
         img_prefix=data_root + 'train/', # FIXME
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/mini_publaynet_val.json', # FIXME
+        ann_file=data_root + 'annotations/val.json', # FIXME
         img_prefix=data_root + 'val/', # FIXME
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/mini_publaynet_val.json', # FIXME
-        img_prefix=data_root + 'val/', # FIXME
+        ann_file=data_root + 'annotations/val.json', # FIXME
+        img_prefix=data_root + 'test/', # FIXME
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox')

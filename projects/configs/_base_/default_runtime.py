@@ -1,4 +1,4 @@
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=40000, by_epoch=False)
 # yapf:disable
 log_config = dict(
     interval=50,

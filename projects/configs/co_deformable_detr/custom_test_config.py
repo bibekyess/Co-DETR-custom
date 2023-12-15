@@ -235,8 +235,8 @@ data = dict(
         img_prefix=data_root + 'val/', # FIXME
         classes=classes),
     test=dict(
-        ann_file=data_root + 'annotations/val.json', # FIXME
-        img_prefix=data_root + 'test/', # FIXME
+        ann_file=data_root + 'annotations/val_mini.json', # FIXME
+        img_prefix=data_root + 'val/', # FIXME
         classes=classes))
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
